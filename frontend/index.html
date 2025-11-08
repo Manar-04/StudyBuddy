@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Study Buddy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Study Buddy</h1>
+
+  <section>
+    <h2>View Flashcards</h2>
+    <input type="number" id="deckIdInput" placeholder="Enter Deck ID">
+    <button onclick="loadFlashcards()">Load Flashcards</button>
+    <ul id="flashcardList"></ul>
+  </section>
+
+  <section>
+    <h2>Add Flashcard</h2>
+    <input type="number" id="deckIdAdd" placeholder="Deck ID">
+    <input type="text" id="questionInput" placeholder="Question">
+    <input type="text" id="answerInput" placeholder="Answer">
+    <button onclick="addFlashcard()">Add Flashcard</button>
+    <p id="addStatus"></p>
+  </section>
+
+<section>
+<form id="deckForm" onsubmit="event.preventDefault(); createDeck();">
+  <input type="text" id="deckTitle" placeholder="Deck Title" required>
+  <input type="text" id="deckSubject" placeholder="Subject" required>
+  <button type="submit">Create Deck</button>
+</form>
+<p id="deckStatus"></p>
+
+
+<section>
+  <h2>Register</h2>
+  <input type="text" id="registerName" placeholder="Name">
+  <input type="email" id="registerEmail" placeholder="Email">
+  <input type="password" id="registerPassword" placeholder="Password">
+  <button onclick="register()">Register</button>
+  <p id="registerStatus"></p>
+</section>
+
+<section>
+  <h2>Login</h2>
+  <input type="email" id="loginEmail" placeholder="Email">
+  <input type="password" id="loginPassword" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <p id="loginStatus"></p>
+</section>
+
+
+<section id="dashboard" style="display: none;">
+  <h2 id="welcomeMessage"></h2>
+  <button onclick="showCreateDeck()">Create Deck</button>
+  <button onclick="loadMyDecks()">My Decks</button>
+  <button onclick="loadPublicDecks()">Public Decks</button>
+  <button onclick="logout()">Logout</button>
+</section>
+
+
+<h3>My Decks</h3>
+<ul id="myDeckList"></ul>
+
+<script src="script.js"></script>
+
+
+
+</body>
+</html>
