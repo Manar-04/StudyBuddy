@@ -79,7 +79,6 @@ Run the Frontend:
 Open frontend/index.html in your browser. You’ll see:
 - Register and login forms
 - Dashboard with deck and flashcard tools
-- Real-time updates after creating decks or flashcards
 
 API Routes:
 
