@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<!-- 📝 REGISTER SECTION -->
+<!-- REGISTER SECTION -->
 <div id="registerSection">
   <h2>Register</h2>
   <form id="registerForm">
@@ -25,7 +25,7 @@
   <div id="registerStatus"></div>
 </div>
 
-  <!-- 🔐 LOGIN SECTION -->
+  <!-- LOGIN SECTION -->
   <div id="loginSection">
     <h2>Login</h2>
     <div id="loginStatus"></div>
@@ -41,16 +41,16 @@
     <div id="loginMessage"></div>
   </div>
 
-  <!-- 🧭 DASHBOARD SECTION (hidden until login) -->
+  <!-- DASHBOARD SECTION (hidden until login) -->
   <div id="dashboard" style="display: none;">
     <h2>Welcome!</h2>
 
-    <!-- 📚 View Flashcards -->
+    <!--  View Flashcards -->
 <h3>View Flashcards</h3>
 <input type="text" id="deckIdInput" placeholder="Click a deck to load flashcards" readonly><br>
 <ul id="flashcardList"></ul>
 
-    <!-- ✅ Create Deck -->
+    <!--  Create Deck -->
     <form id="deckForm">
       <label for="deckTitle">Deck Title:</label>
       <input type="text" id="deckTitle" required><br>
@@ -62,7 +62,7 @@
     </form>
     <div id="deckStatus"></div>
 
-    <!-- ✅ Add Flashcard -->
+    <!--  Add Flashcard -->
     <form id="flashcardForm">
       <label for="questionInput">Question:</label>
       <input type="text" id="questionInput" required><br>
@@ -80,12 +80,12 @@
 <ul id="flashcardList"></ul>
     <div id="addStatus"></div>
 
-<!-- ✅ My Decks -->
+<!--  My Decks -->
 <button id="myDecksButton">Show My Decks</button>
 <ul id="myDeckList"></ul>
   </div>
 
-  <!-- 🚪 Logout -->
+  <!--  Logout -->
 <button onclick="logout()">Logout</button>
 
 
