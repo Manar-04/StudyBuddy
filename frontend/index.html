@@ -5,67 +5,93 @@
   <title>Study Buddy</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>Study Buddy</h1>
-
-  <section>
-    <h2>View Flashcards</h2>
-    <input type="number" id="deckIdInput" placeholder="Enter Deck ID">
-    <button onclick="loadFlashcards()">Load Flashcards</button>
-    <ul id="flashcardList"></ul>
-  </section>
-
-  <section>
-    <h2>Add Flashcard</h2>
-    <input type="number" id="deckIdAdd" placeholder="Deck ID">
-    <input type="text" id="questionInput" placeholder="Question">
-    <input type="text" id="answerInput" placeholder="Answer">
-    <button onclick="addFlashcard()">Add Flashcard</button>
-    <p id="addStatus"></p>
-  </section>
-
-<section>
-<form id="deckForm" onsubmit="event.preventDefault(); createDeck();">
-  <input type="text" id="deckTitle" placeholder="Deck Title" required>
-  <input type="text" id="deckSubject" placeholder="Subject" required>
-  <button type="submit">Create Deck</button>
-</form>
-<p id="deckStatus"></p>
-
-
-<section>
+<!-- 📝 REGISTER SECTION -->
+<div id="registerSection">
   <h2>Register</h2>
-  <input type="text" id="registerName" placeholder="Name">
-  <input type="email" id="registerEmail" placeholder="Email">
-  <input type="password" id="registerPassword" placeholder="Password">
-  <button onclick="register()">Register</button>
-  <p id="registerStatus"></p>
-</section>
+  <form id="registerForm">
+    <label for="registerName">Name:</label>
+    <input type="text" id="registerName" required><br>
 
-<section>
-  <h2>Login</h2>
-  <input type="email" id="loginEmail" placeholder="Email">
-  <input type="password" id="loginPassword" placeholder="Password">
-  <button onclick="login()">Login</button>
-  <p id="loginStatus"></p>
-</section>
+    <label for="registerEmail">Email:</label>
+    <input type="email" id="registerEmail" required><br>
 
+    <label for="registerPassword">Password:</label>
+    <input type="password" id="registerPassword" required><br>
 
-<section id="dashboard" style="display: none;">
-  <h2 id="welcomeMessage"></h2>
-  <button onclick="showCreateDeck()">Create Deck</button>
-  <button onclick="loadMyDecks()">My Decks</button>
-  <button onclick="loadPublicDecks()">Public Decks</button>
-  <button onclick="logout()">Logout</button>
-</section>
+    <button type="submit">Register</button>
+  </form>
+  <div id="registerStatus"></div>
+</div>
 
+  <!-- 🔐 LOGIN SECTION -->
+  <div id="loginSection">
+    <h2>Login</h2>
+    <div id="loginStatus"></div>
+    <form id="loginForm">
+      <label for="emailLogin">Email:</label>
+      <input type="email" id="emailLogin" required><br>
 
-<h3>My Decks</h3>
+      <label for="passwordLogin">Password:</label>
+      <input type="password" id="passwordLogin" required><br>
+
+      <button type="submit">Login</button>
+    </form>
+    <div id="loginMessage"></div>
+  </div>
+
+  <!-- 🧭 DASHBOARD SECTION (hidden until login) -->
+  <div id="dashboard" style="display: none;">
+    <h2>Welcome!</h2>
+
+    <!-- 📚 View Flashcards -->
+<h3>View Flashcards</h3>
+<input type="text" id="deckIdInput" placeholder="Click a deck to load flashcards" readonly><br>
+<ul id="flashcardList"></ul>
+
+    <!-- ✅ Create Deck -->
+    <form id="deckForm">
+      <label for="deckTitle">Deck Title:</label>
+      <input type="text" id="deckTitle" required><br>
+
+      <label for="deckSubject">Subject:</label>
+      <input type="text" id="deckSubject" required><br>
+
+      <button type="submit">Create Deck</button>
+    </form>
+    <div id="deckStatus"></div>
+
+    <!-- ✅ Add Flashcard -->
+    <form id="flashcardForm">
+      <label for="questionInput">Question:</label>
+      <input type="text" id="questionInput" required><br>
+
+      <label for="answerInput">Answer:</label>
+      <input type="text" id="answerInput" required><br>
+
+      <label for="deckSelect">Choose Deck:</label>
+      <select id="deckSelect"></select><br>
+
+      <button type="submit">Add Flashcard</button>
+    </form>
+
+    <h3 id="flashcardHeader" style="display:none;">Flashcards for this deck:</h3>
+<ul id="flashcardList"></ul>
+    <div id="addStatus"></div>
+
+<!-- ✅ My Decks -->
+<button id="myDecksButton">Show My Decks</button>
 <ul id="myDeckList"></ul>
+  </div>
+
+  <!-- 🚪 Logout -->
+<button onclick="logout()">Logout</button>
+
 
 <script src="script.js"></script>
 
-
-
 </body>
+
+
 </html>
