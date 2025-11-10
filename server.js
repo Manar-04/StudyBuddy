@@ -16,16 +16,6 @@ const pool = new Pool({
   port: 5432                      // default PostgreSQL port
 });
 
-// test route: get all users
-app.get("/api/users", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT * FROM users");
-    res.json(result.rows);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Something went wrong");
-  }
-});
 
 // register a new user
 app.post("/api/users", async (req, res) => {
@@ -134,19 +124,6 @@ app.post("/api/quizzes", async function (req, res) {
   }
 });
 
-app.post("/api/quizzes", async function (req, res) {
-  const { user_id, deck_id, score } = req.body;
-  try {
-    const result = await pool.query(
-      "INSERT INTO quizzes (user_id, deck_id, score) VALUES ($1, $2, $3) RETURNING *",
-      [user_id, deck_id, score]
-    );
-    res.json(result.rows[0]);
-  } catch (err) {
-    console.error("Quiz save error:", err);
-    res.status(500).json({ error: "Failed to save quiz" });
-  }
-});
 
 
 app.post("/api/register", async function (req, res) {
